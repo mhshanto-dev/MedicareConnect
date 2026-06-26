@@ -1,1 +1,8 @@
-export default function Pagep15dr() { return <div className="p-6"><h1 className="text-2xl font-bold">/dashboard/doctor/reviews</h1><p>This page is under construction.</p></div>; }
+'use client';
+export default function Reviews() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold">My Reviews</h1>
+    </div>
+  );
+}

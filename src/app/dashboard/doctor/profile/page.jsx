@@ -1,1 +1,11 @@
-export default function Pageoe3yg() { return <div className="p-6"><h1 className="text-2xl font-bold">/dashboard/doctor/profile</h1><p>This page is under construction.</p></div>; }
+'use client';
+import useAuthStore from '@/store/useAuthStore';
+export default function Profile() {
+  const { user } = useAuthStore();
+  return (
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold">Doctor Profile</h1>
+      <p>Dr. {user?.name}</p>
+    </div>
+  );
+}

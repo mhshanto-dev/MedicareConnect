@@ -1,1 +1,12 @@
-export default function Page3eg8f7() { return <div className="p-6"><h1 className="text-2xl font-bold">/dashboard/patient/favorites</h1><p>This page is under construction.</p></div>; }
+'use client';
+import { EmptyState } from '@/components/dashboard/EmptyState';
+import { Heart } from 'lucide-react';
+
+export default function Favorites() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold">Favorite Doctors</h1>
+      <EmptyState icon={Heart} title="No Favorites" description="You haven't saved any doctors yet." />
+    </div>
+  );
+}

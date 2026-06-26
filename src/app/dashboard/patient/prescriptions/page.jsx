@@ -1,1 +1,12 @@
-export default function Pagemy34tp() { return <div className="p-6"><h1 className="text-2xl font-bold">/dashboard/patient/prescriptions</h1><p>This page is under construction.</p></div>; }
+'use client';
+import { EmptyState } from '@/components/dashboard/EmptyState';
+import { FileText } from 'lucide-react';
+
+export default function Prescriptions() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold">My Prescriptions</h1>
+      <EmptyState icon={FileText} title="No Prescriptions" description="You have no prescriptions." />
+    </div>
+  );
+}
