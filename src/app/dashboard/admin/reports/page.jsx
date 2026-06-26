@@ -1,0 +1,1 @@
+export default function Page0huo33r() { return <div className="p-6"><h1 className="text-2xl font-bold">/dashboard/admin/reports</h1><p>This page is under construction.</p></div>; }

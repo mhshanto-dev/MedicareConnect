@@ -1,0 +1,1 @@
+export default function Pagev50jgs() { return <div className="p-6"><h1 className="text-2xl font-bold">/doctor/[id]</h1><p>This page is under construction.</p></div>; }

@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import api from '../../lib/axios';
+import api from '@/lib/axios';
 import Link from 'next/link';
-import LoadingSkeleton from '../../components/LoadingSkeleton';
+import LoadingSkeleton from '@/components/LoadingSkeleton';
 
 export default function FindDoctors() {
   const [search, setSearch] = useState('');

@@ -1,0 +1,1 @@
+export default function Pageyvdn3e() { return <div className="p-6"><h1 className="text-2xl font-bold">/dashboard/doctor/appointments</h1><p>This page is under construction.</p></div>; }

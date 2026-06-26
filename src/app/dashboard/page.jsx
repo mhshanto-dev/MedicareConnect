@@ -2,7 +2,7 @@
 import { Suspense } from 'react';
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import useAuthStore from '../../store/useAuthStore';
+import useAuthStore from '@/store/useAuthStore';
 
 function DashboardContent() {
   const { user, isAuthenticated, checkAuth, syncGoogleSession, isLoading } = useAuthStore();
@@ -35,11 +35,11 @@ function DashboardContent() {
       if (!isAuthenticated) {
         router.push('/login');
       } else if (user?.role === 'admin') {
-        router.push('/admin/analytics');
+        router.push('/dashboard/admin');
       } else if (user?.role === 'doctor') {
-        router.push('/doctor/schedule');
+        router.push('/dashboard/doctor');
       } else {
-        router.push('/patient/appointments');
+        router.push('/dashboard/patient');
       }
     }
   }, [isLoading, isAuthenticated, user, router, syncing]);

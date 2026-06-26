@@ -1,0 +1,1 @@
+export default function Page9pkt4() { return <div className="p-6"><h1 className="text-2xl font-bold">/dashboard/doctor</h1><p>This page is under construction.</p></div>; }

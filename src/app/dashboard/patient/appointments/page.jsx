@@ -1,7 +1,7 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
-import api from '../../../lib/axios';
-import LoadingSkeleton from '../../../components/LoadingSkeleton';
+import api from '@/lib/axios';
+import LoadingSkeleton from '@/components/LoadingSkeleton';
 import toast from 'react-hot-toast';
 
 export default function Appointments() {
