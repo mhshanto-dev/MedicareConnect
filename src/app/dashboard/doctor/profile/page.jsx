@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import { useQuery } from '@tanstack/react-query';
 import { User, Phone, Briefcase, FileText, Save, Plus, Trash2, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SkeletonCard } from '@/components/dashboard/SkeletonCard';
 
 export default function Profile() {
   const { user, checkAuth } = useAuthStore();
