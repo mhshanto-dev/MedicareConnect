@@ -1,7 +1,11 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api',
+  // Use a relative path so Next.js rewrites proxy this to localhost:5000/api
+  // (see next.config.mjs). Falls back to absolute URL if NEXT_PUBLIC_API_URL is set.
+  baseURL: typeof window !== 'undefined'
+    ? '/api'
+    : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'),
   withCredentials: true,
 });
 
