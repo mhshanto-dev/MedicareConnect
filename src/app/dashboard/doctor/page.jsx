@@ -1,11 +1,11 @@
 'use client';
 import { useEffect } from 'react';
+import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import api from '@/lib/axios';
 import useAuthStore from '@/store/useAuthStore';
 import { SkeletonCard } from '@/components/dashboard/SkeletonCard';
-import { EmptyState } from '@/components/dashboard/EmptyState';
-import { Calendar, Users, DollarSign, Star, TrendingUp } from 'lucide-react';
+import { Calendar, Users, DollarSign, Star, TrendingUp, ArrowRight, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import {
   ResponsiveContainer,
@@ -53,11 +53,38 @@ export default function DoctorDashboard() {
     );
   }
 
-  if (error || !stats) {
+  if (error) {
     return (
-      <div className="text-center py-20 bg-white rounded-3xl border border-red-200">
-        <p className="text-red-500 font-bold">Please complete your doctor profile setup first to view dashboard stats.</p>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex items-center justify-center min-h-[60vh]"
+      >
+        <div className="bg-white rounded-3xl border border-blue-100 shadow-sm p-10 max-w-lg w-full text-center">
+          <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+            <CheckCircle size={40} className="text-blue-500" />
+          </div>
+          <h2 className="text-2xl font-extrabold text-slate-900 mb-3">Complete Your Profile</h2>
+          <p className="text-slate-500 mb-8 leading-relaxed">
+            Welcome, Dr. <strong>{user?.name}</strong>! Please fill in your professional details
+            — specialty, experience, consultation fee, and availability — to start accepting patients.
+          </p>
+          <div className="space-y-3">
+            <Link
+              href="/dashboard/doctor/profile"
+              className="flex items-center justify-center gap-2 w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors shadow-md"
+            >
+              Set Up My Profile <ArrowRight size={18} />
+            </Link>
+            <Link
+              href="/dashboard/doctor/schedule"
+              className="flex items-center justify-center gap-2 w-full py-3 border border-slate-200 text-slate-600 hover:bg-slate-50 font-semibold rounded-xl transition-colors"
+            >
+              Configure Availability
+            </Link>
+          </div>
+        </div>
+      </motion.div>
     );
   }
 
