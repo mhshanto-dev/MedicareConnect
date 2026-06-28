@@ -16,7 +16,7 @@ export default function RoleRoute({ children, allowedRoles }) {
       if (!isAuthenticated) {
         router.push('/login');
       } else if (user && !allowedRoles.includes(user.role)) {
-        router.push('/unauthorized');
+        router.push('/dashboard');
       }
     }
   }, [isLoading, isAuthenticated, user, allowedRoles, router]);
