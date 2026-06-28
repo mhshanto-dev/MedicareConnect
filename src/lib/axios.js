@@ -1,11 +1,11 @@
 import axios from 'axios';
 
+// PRODUCTION FIX: Always use the absolute backend URL.
+// In development, NEXT_PUBLIC_API_URL falls back to localhost.
+// The relative '/api' approach only works with a local Next.js proxy
+// (localhost:5000), which does NOT exist on Vercel production.
 const api = axios.create({
-  // Use a relative path so Next.js rewrites proxy this to localhost:5000/api
-  // (see next.config.mjs). Falls back to absolute URL if NEXT_PUBLIC_API_URL is set.
-  baseURL: typeof window !== 'undefined'
-    ? '/api'
-    : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'),
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api',
   withCredentials: true,
 });
 
