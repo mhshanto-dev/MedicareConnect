@@ -8,15 +8,15 @@ The platform allows patients to book appointments, doctors to manage schedules a
 
 # 🌐 Live Demo
 
-**Live Site:** https://your-frontend-url.vercel.app
+**Live Site:** https://frontend-orpin-eight-50.vercel.app
 
 ---
 
 # 🔗 Repository
 
-**Client:** https://github.com/YOUR_USERNAME/medicare-connect-client
+**Client:**https://github.com/mhshanto-dev/MedicareConnect
 
-**Server:** https://github.com/YOUR_USERNAME/medicare-connect-server
+**Server:** https://github.com/mhshanto-dev/MedicareConnect-Server
 
 ---
 
